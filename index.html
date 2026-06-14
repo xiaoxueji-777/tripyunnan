@@ -128,6 +128,12 @@
     font-size: .8em;
     color: var(--muted);
   }
+  .day-card .hotel {
+    font-size: .78em;
+    color: #5a9e6f;
+    font-weight: 600;
+    margin-top: 2px;
+  }
 
   /* Plan grid */
   .plan-grid {
@@ -279,38 +285,44 @@ function switchTab(name, btn) {
   <div class="overview-grid">
     <div class="day-card">
       <div class="num">17</div><div class="date">6/17 周二</div>
-      <div class="city">抵达昆明</div>
-      <div class="note">晚住火车站附近</div>
+      <div class="city">✈ 抵达昆明</div>
+      <div class="note">打车→火车站附近酒店</div>
+      <div class="hotel">🏨 昆明云桐酒店</div>
     </div>
     <div class="day-card">
       <div class="num">18</div><div class="date">6/18 周三</div>
       <div class="city">昆明 → 大理</div>
-      <div class="note">昆明全天·傍晚18:00高铁2h</div>
+      <div class="note">步行→昆明站→🚄高铁2h→大理站→打车至古城</div>
+      <div class="hotel">🏨 山与海·闲庭拾翠 stonehaven庭院</div>
     </div>
     <div class="day-card">
       <div class="num">19🎋</div><div class="date">6/19 周四</div>
       <div class="city">大理整天</div>
       <div class="note">端午节·大理古城</div>
+      <div class="hotel">🏨 山与海·闲庭拾翠 stonehaven庭院</div>
     </div>
     <div class="day-card">
       <div class="num">20</div><div class="date">6/20 周五</div>
       <div class="city">大理 → 丽江</div>
-      <div class="note">大理全天·17:00大巴去丽江</div>
+      <div class="note">🚌 大理古城→大巴3.5h→丽江古城</div>
+      <div class="hotel">🏨 只此云间美宿（丽江古城店）</div>
     </div>
     <div class="day-card">
       <div class="num">21</div><div class="date">6/21 周六</div>
       <div class="city">丽江整天</div>
       <div class="note">住丽江古城</div>
+      <div class="hotel">🏨 只此云间美宿（丽江古城店）</div>
     </div>
     <div class="day-card">
       <div class="num">22</div><div class="date">6/22 周日</div>
       <div class="city">丽江 → 机场</div>
-      <div class="note">全天·20:00出发去机场</div>
+      <div class="note">🚕 古城打车→三义机场40min</div>
+      <div class="hotel">🏨 金航民宿（机场店）</div>
     </div>
     <div class="day-card">
       <div class="num">23</div><div class="date">6/23 周一</div>
       <div class="city">丽江 ✈ 郑州</div>
-      <div class="note">上午航班</div>
+      <div class="note">步行至航站楼·上午航班</div>
     </div>
   </div>
 
@@ -324,6 +336,45 @@ function switchTab(name, btn) {
       <p>气温 17-26°C · 紫外线强（阴天也晒） · 带件薄冲锋衣即可</p>
     </div>
   </div>
+
+  <!-- 住宿 & 交通 -->
+  <h2>🏨 住宿 & 🚗 城际交通</h2>
+
+  <table class="matrix">
+    <thead>
+      <tr><th>日期</th><th>住宿</th><th>位置</th><th>城际交通</th></tr>
+    </thead>
+    <tr>
+      <td>6/17</td>
+      <td><strong>昆明云桐酒店</strong></td>
+      <td>昆明站步行3分钟</td>
+      <td>✈ 抵达 → 🚕 打车 → 昆明云桐酒店</td>
+    </tr>
+    <tr>
+      <td>6/18-19</td>
+      <td><strong>山与海·闲庭拾翠 stonehaven庭院</strong></td>
+      <td>古城南门附近</td>
+      <td>🚶 步行→昆明站 → 🚄 高铁2h(18:00-20:00) → 大理站 → 🚕 打车至古城(30min)</td>
+    </tr>
+    <tr>
+      <td>6/20-21</td>
+      <td><strong>只此云间美宿（丽江古城店）</strong></td>
+      <td>古城南门/忠义市场附近</td>
+      <td>🚌 大理古城大巴3.5h(17:00-20:30) → 丽江古城</td>
+    </tr>
+    <tr>
+      <td>6/22</td>
+      <td><strong>金航民宿（机场店）</strong></td>
+      <td>三义机场步行5分钟</td>
+      <td>🚕 古城打车→三义机场(40min, 20:00出发)</td>
+    </tr>
+    <tr>
+      <td>6/23</td>
+      <td>—</td>
+      <td>—</td>
+      <td>🚶 步行至航站楼 → ✈ 飞郑州</td>
+    </tr>
+  </table>
 
   <!-- 装备 -->
   <h2>🎒 装备清单</h2>
@@ -372,7 +423,15 @@ function switchTab(name, btn) {
 <div id="kunming" class="section">
 
   <h2>🏙 昆明 · 6/18 全天</h2>
-  <p style="color:var(--muted);margin-bottom:16px">傍晚 <strong>18:00</strong> 高铁出发去大理（2h），<strong>17:40</strong> 到昆明站即可。有一整天慢慢玩，不用赶。</p>
+  <div class="weather-banner" style="margin-bottom:16px">
+    <div class="icon">🏨</div>
+    <div class="info">
+      <p><strong>昆明云桐酒店</strong>（昆明站步行3分钟）</p>
+      <p>🚕 6/17 晚：机场打车直达酒店。</p>
+      <p>🚄 6/18 傍晚：步行到昆明站，<strong>18:00 高铁→大理</strong>（2h，17:40 到站即可）</p>
+      <p>🚕 市内：翠湖线打车10分钟 / 捞鱼河40分钟 / 斗南地铁可达</p>
+    </div>
+  </div>
 
   <div class="plan-grid">
 
@@ -444,7 +503,15 @@ function switchTab(name, btn) {
 <div id="dali" class="section">
 
   <h2>🏯 大理 · 6/18 晚入住 → 6/20 傍晚离开</h2>
-  <p style="color:var(--muted);margin-bottom:16px">核心游玩：6/19 端午全天 + 6/20 全天。<strong>17:00</strong> 大理古城坐大巴去丽江（约3.5h），下午还能玩到 16:30。住宿建议古城南门或人民路附近。</p>
+  <div class="weather-banner" style="margin-bottom:16px">
+    <div class="icon">🏨</div>
+    <div class="info">
+      <p><strong>山与海·闲庭拾翠 stonehaven庭院</strong>（古城南门附近）</p>
+      <p>🚄 6/18 晚：大理站出来打车至古城酒店（约30分钟）</p>
+      <p>🚌 6/20 傍晚：<strong>17:00 大理古城→大巴3.5h→丽江古城</strong>，玩到16:30取行李</p>
+      <p>🚕 市内：古城周边步行；喜洲/海舌打车20-30分钟；海东包车约300元</p>
+    </div>
+  </div>
 
   <div class="plan-grid">
 
@@ -456,7 +523,7 @@ function switchTab(name, btn) {
         <tr><td>9:00</td><td>早餐：古城稀豆粉+油条</td></tr>
         <tr><td>9:30-12:30</td><td><strong>洱海西路骑行</strong> · 才村→S湾→廊桥→喜洲（15km），走走停停3h刚好</td></tr>
         <tr><td>12:30-14:00</td><td><strong>喜洲古镇</strong> · 酸辣鱼+喜洲粑粑+转角楼+稻田</td></tr>
-        <tr><td>14:30-16:00</td><td><strong>周城扎染</strong> · 璞真扎染博物馆，体验~100元</td></tr>
+        <tr><td>14:00-15:30</td><td><strong>无为寺</strong> · 喜洲回古城顺路，苍山脚下千年古刹，古树山泉、清幽无人，比寂照庵更原生态</td></tr>
         <tr><td>17:00-19:00</td><td>回古城休整</td></tr>
         <tr><td>19:00-深夜</td><td>古城夜：烤乳扇→九月酒吧→洱海门烧烤</td></tr>
         <tr><td colspan="2"><strong>┃ 6/20 全天</strong></td></tr>
@@ -485,7 +552,7 @@ function switchTab(name, btn) {
         <tr><td colspan="2"><strong>┃ 6/20 全天</strong></td></tr>
         <tr><td>9:00-9:30</td><td>古城出发，打车去喜洲（北18km，约25分钟）</td></tr>
         <tr><td>9:30-11:30</td><td><strong>喜洲古镇</strong> · 转角楼+稻田+匠志集民艺中心，破酥粑粑趁热吃</td></tr>
-        <tr><td>11:30-12:30</td><td><strong>周城扎染</strong> · 喜洲往北5km，璞真博物馆参观+体验，买成品做手信</td></tr>
+        <tr><td>11:30-12:30</td><td><strong>海舌生态公园</strong> · 喜洲北边洱海半岛尖，免费！三面环水+夫妻树+枯木沙滩，拍照不输收费景点</td></tr>
         <tr><td>12:30-14:00</td><td>回古城，午餐</td></tr>
         <tr><td>14:00-15:00</td><td><strong>崇圣寺三塔</strong> · 古城西北1km步行可达，下午光线拍三塔刚刚好</td></tr>
         <tr><td>15:00-16:30</td><td><strong>凤阳邑</strong> · 古城南5km，有风地方石板路+楸园咖啡，来回快不耽误</td></tr>
@@ -501,19 +568,18 @@ function switchTab(name, btn) {
         <tr><td colspan="2"><strong>┃ 6/19 全天</strong></td></tr>
         <tr><td>9:00-10:30</td><td><strong>大理古城深度</strong> · 南城门→五华楼→天主教堂→大理市博物馆</td></tr>
         <tr><td>10:30-12:00</td><td><strong>床单厂艺术区</strong> · 独立书店+手工坊+画廊，室内</td></tr>
-        <tr><td>12:00-13:30</td><td><strong>🍄 菌子火锅</strong> · 花意间野生菌，鸡枞+牛肝菌+见手青</td></tr>
-        <tr><td>14:00-17:00</td><td><strong>周城扎染</strong> · 璞真博物馆或蓝续扎染，全程室内</td></tr>
-        <tr><td>17:30-19:00</td><td>回古城休整</td></tr>
+        <tr><td>12:00-13:00</td><td>午餐：古城"石井私房菜"砂锅鱼或"醉琉璃"酸辣鱼，地道大理味</td></tr>
+        <tr><td>13:30-16:00</td><td><strong>寂照庵</strong> · 古城南仅5km打车15分钟，雨天喝茶+多肉+绣球花+听雨，比跑喜洲近多了</td></tr>
+        <tr><td>16:00-16:30</td><td>下山顺便逛<b>天龙八部影视城</b>（感通索道口旁边，免费看外围）</td></tr>
+        <tr><td>17:00-19:00</td><td>回古城休整</td></tr>
         <tr><td>19:00-深夜</td><td>古城雨夜：Gala庭院（二楼听雨）/ 飘香酒馆</td></tr>
         <tr><td colspan="2"><strong>┃ 6/20 全天</strong></td></tr>
-        <tr><td>9:00-9:30</td><td>古城出发，打车去喜洲（北18km）</td></tr>
-        <tr><td>9:30-11:30</td><td><strong>喜洲古镇</strong> · 稻田承雨+转角楼+匠志集民艺中心（室内），雨天更安静</td></tr>
-        <tr><td>11:00-12:00</td><td><strong>周城扎染</strong> · 喜洲往北5km，璞真博物馆或蓝续扎染，雨天看雨打稻浪</td></tr>
+        <tr><td>9:00-9:30</td><td>古城出发，打车去喜洲（北18km，早上跑远的，下午就近）</td></tr>
+        <tr><td>9:30-12:00</td><td><strong>喜洲古镇</strong> · 稻田承雨+转角楼+白族老建筑群（免费），雨天古镇慢慢逛，破酥粑粑趁热吃</td></tr>
         <tr><td>12:00-12:30</td><td>回古城</td></tr>
-        <tr><td>12:30-13:30</td><td>午餐：古城"花意间"再吃一顿菌子火锅</td></tr>
-        <tr><td>13:30-15:30</td><td><strong>寂照庵</strong> · 古城南仅5km，雨天喝茶+多肉+绣球花+听雨，离古城近不用赶</td></tr>
-        <tr><td>15:30-16:00</td><td>下山顺便逛<b>天龙八部影视城</b>（感通索道口旁边）或直接回古城</td></tr>
-        <tr><td>16:00-16:30</td><td>古城内最后走走，取行李</td></tr>
+        <tr><td>12:30-13:30</td><td>午餐：古城"段公子"大理菜或凉鸡米线</td></tr>
+        <tr><td>13:30-15:30</td><td><strong>才村/龙龛码头</strong> · 古城东3km骑车或打车5分钟，洱海边发呆吹风，比古城更安静</td></tr>
+        <tr><td>15:30-16:30</td><td>古城内最后走走，取行李</td></tr>
         <tr><td>17:00</td><td>大理古城 → 大巴去丽江古城</td></tr>
       </table>
     </div>
@@ -534,7 +600,7 @@ function switchTab(name, btn) {
         <tr><td>10:00-10:30</td><td>打车去喜洲（北18km）</td></tr>
         <tr><td>10:30-12:30</td><td><strong>喜洲古镇</strong> · 稻田承雨+转角楼+破酥粑粑，雨天更安静</td></tr>
         <tr><td>12:30-13:30</td><td>午餐：喜洲翰林餐厅酸辣鱼</td></tr>
-        <tr><td>13:30-15:00</td><td><strong>蓝续扎染</strong> · 喜洲稻田边，雨天看雨打稻浪，做一块方巾</td></tr>
+        <tr><td>13:30-15:00</td><td><strong>海舌生态公园</strong> · 喜洲北边洱海半岛尖，免费！三面环水+夫妻树，雨天人更少，烟雨洱海别有味道</td></tr>
         <tr><td>15:00-15:30</td><td>打车回古城</td></tr>
         <tr><td>15:30-16:30</td><td><strong>北门菜市场</strong> · 古城内步行，买乳扇+雕梅酒做最后伴手礼</td></tr>
         <tr><td>16:30</td><td>取行李</td></tr>
@@ -605,13 +671,14 @@ function switchTab(name, btn) {
 
     <!-- 雨天 A -->
     <div class="plan-card rainy">
-      <div class="head">🌧 雨天方案 A · 木府+演出+室内文化线</div>
+      <div class="head">🌧 雨天方案 A · 木府+黑龙潭+古城线（文化+山水，全免费）</div>
       <table>
         <tr><td colspan="2"><strong>┃ 6/21 全天</strong></td></tr>
         <tr><td>9:00-11:30</td><td><strong>木府</strong> · "木府风云"实景，雨中飞檐出片，门票40含讲解</td></tr>
         <tr><td>11:30-13:00</td><td>午餐："阿妈意"纳西菜</td></tr>
         <tr><td>13:00-15:30</td><td><strong>手道丽江</strong> · 纳西手工东巴纸体验（1-2h室内）或东巴文化博物馆</td></tr>
-        <tr><td>16:00-18:00</td><td><strong>丽江千古情</strong> · 宋城室内演出，16:30场，声光电震撼</td></tr>
+        <tr><td>16:00-17:30</td><td><strong>黑龙潭公园</strong> · 免费！古城北门步行5分钟，亭台楼阁+雨中雪山倒影，比晴天更有水墨意境</td></tr>
+        <tr><td>17:30-18:30</td><td><strong>狮子山</strong> · 免费！沿石阶上到万古楼外围，俯瞰整个大研古城雨景，红灯笼亮起时分最美</td></tr>
         <tr><td>19:00</td><td>晚餐："88号小吃店"鸡豆凉粉</td></tr>
         <tr><td>20:30-22:00</td><td><strong>纳西古乐会</strong> · 70+岁老爷爷唐宋遗音，室内完美夜场</td></tr>
         <tr><td colspan="2"><strong>┃ 6/22 全天</strong></td></tr>
