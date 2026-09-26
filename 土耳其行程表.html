@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>土耳其行程表 · 2026.9.28–10.4</title>
+<style>
+  :root {
+    --bg: #f6f1e7;
+    --card: #ffffff;
+    --ink: #2b2b28;
+    --muted: #7a7468;
+    --teal: #0e7490;
+    --teal-soft: #e0f2f6;
+    --orange: #c2410c;
+    --orange-soft: #fdeee3;
+    --line: #e8e2d4;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 28px 16px 56px; }
+
+  /* ---------- header ---------- */
+  header { text-align: center; margin-bottom: 28px; }
+  header h1 { font-size: 26px; letter-spacing: 2px; }
+  .sub { color: var(--muted); font-size: 14px; margin-top: 6px; }
+  .route {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 6px;
+    margin-top: 16px; font-size: 13px;
+  }
+  .route span {
+    background: var(--card); border: 1px solid var(--line);
+    padding: 4px 12px; border-radius: 999px; color: #55514a;
+  }
+  .route b { color: var(--teal); font-weight: 600; }
+  .route .arrow { border: none; background: none; color: var(--muted); padding: 4px 2px; }
+
+  /* ---------- day cards ---------- */
+  .day {
+    background: var(--card);
+    border-radius: 14px;
+    box-shadow: 0 1px 3px rgba(60, 50, 30, .08);
+    margin-bottom: 18px;
+    overflow: hidden;
+  }
+  .day-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .day-num {
+    flex: none; width: 40px; height: 40px; border-radius: 50%;
+    background: var(--teal); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 17px;
+  }
+  .day-title { flex: 1; min-width: 0; }
+  .day-title .d { font-size: 15px; font-weight: 700; }
+  .day-title .t { font-size: 12.5px; color: var(--muted); margin-top: 1px; }
+  .city {
+    flex: none; font-size: 12px; font-weight: 600;
+    background: var(--orange-soft); color: var(--orange);
+    padding: 4px 10px; border-radius: 999px; white-space: nowrap;
+  }
+  .day-body { padding: 4px 18px 14px; }
+  .sec { padding: 10px 0 2px; }
+  .sec:first-child { padding-top: 12px; }
+  .sec-label {
+    display: flex; align-items: center; gap: 7px;
+    font-size: 12.5px; font-weight: 700; color: var(--teal);
+    letter-spacing: 1px; margin-bottom: 4px;
+  }
+  .sec-label svg { flex: none; }
+  .sec .txt { font-size: 14.5px; }
+  .sec ul { list-style: none; margin-top: 4px; }
+  .sec li {
+    font-size: 14px; position: relative; padding-left: 14px; margin-bottom: 5px;
+  }
+  .sec li::before {
+    content: ""; position: absolute; left: 0; top: 11px;
+    width: 5px; height: 5px; border-radius: 50%; background: var(--orange);
+  }
+  .sec .dim { color: var(--muted); }
+
+  /* transport guide (10/1) */
+  .steps { margin-top: 6px; }
+  .step {
+    border-left: 2px solid var(--teal-soft);
+    padding: 2px 0 2px 12px; margin-bottom: 8px; font-size: 14px;
+  }
+  .step b { color: var(--teal); }
+
+  /* bahrain card */
+  .bahrain .day-num { background: var(--orange); }
+  .bahrain .day-head { border-bottom-color: var(--orange-soft); }
+
+  /* note */
+  .note {
+    background: var(--card); border: 1px dashed #d8cfb8;
+    border-radius: 14px; padding: 16px 18px; font-size: 13.5px; color: #6d675c;
+  }
+  .note b { color: #8a7d5f; display: block; margin-bottom: 4px; font-size: 13px; }
+
+  footer { text-align: center; color: #a89f8d; font-size: 12px; margin-top: 26px; }
+
+  @media (max-width: 480px) {
+    .day-num { width: 34px; height: 34px; font-size: 15px; }
+    .city { display: none; }
+    .day-head { padding: 12px 14px; }
+    .day-body { padding: 4px 14px 12px; }
+  }
+  @media print {
+    body { background: #fff; }
+    .day { box-shadow: none; border: 1px solid var(--line); }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>土耳其行程表</h1>
+  <p class="sub">2026 年 9 月 28 日 — 10 月 4 日 · 共 7 天</p>
+  <div class="route">
+    <span><b>卡帕多奇亚</b></span><span class="arrow">→</span>
+    <span>安塔利亚</span><span class="arrow">→</span>
+    <span><b>伊斯坦布尔</b></span><span class="arrow">→</span>
+    <span>返程(经停巴林)</span>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= Day 1 ================= -->
+<section class="day">
+  <div class="day-head">
+    <div class="day-num">1</div>
+    <div class="day-title">
+      <div class="d">9 月 28 日 · 周一</div>
+      <div class="t">抵达伊斯坦布尔,转机飞往卡帕多奇亚</div>
+    </div>
+    <div class="city">格雷梅</div>
+  </div>
+  <div class="day-body">
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        行程
+      </div>
+      <div class="txt">抵达 Istanbul 后飞机转往 Cappadocia(卡帕多奇亚)</div>
+      <ul>
+        <li>中午到达,先吃饭,然后去<b>格雷梅露天博物馆</b>参观(或者门口看看吧),然后去<b>日落观景平台</b></li>
+        <li>格雷梅露天博物馆、镇中心、Sunset Point 日落</li>
+      </ul>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4M9 10h.01M15 10h.01"/></svg>
+        住宿
+      </div>
+      <div class="txt"><b>Göreme Hostel</b><span class="dim"> · 格雷梅(Göreme)</span></div>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6v6M15 6v6M2 12h19.6M18 18h3s-.5-4.3-.8-6M4 18H1s.5-4.3.8-6M5 18l1.5 2h3L11 18M13 18l1.5 2h3L19 18"/></svg>
+        转场 / 交通
+      </div>
+      <ul>
+        <li>到达<b>开塞利机场</b>,走拼车预定</li>
+        <li>坐大巴去博物馆,然后步行至日落观景平台</li>
+      </ul>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M9 7h6M9 11h6M9 15h3"/></svg>
+        行李处理
+      </div>
+      <div class="txt">下车放到住的地方,跟老板讲好</div>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18v9H3zM7 11V8a5 5 0 0 1 10 0v3"/></svg>
+        吃什么
+      </div>
+      <div class="txt dim">—</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Day 2 ================= -->
+<section class="day">
+  <div class="day-head">
+    <div class="day-num">2</div>
+    <div class="day-title">
+      <div class="d">9 月 29 日 · 周二</div>
+      <div class="t">卡帕多奇亚游玩,晚上夜巴去安塔利亚</div>
+    </div>
+    <div class="city">夜巴</div>
+  </div>
+  <div class="day-body">
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        行程
+      </div>
+      <div class="txt">Cappadocia 游玩,晚上夜巴去 Antalya(安塔利亚)</div>
+      <ul>
+        <li>日出平台追气球 &amp; 欣赏地貌 —— <b>乌奇希萨尔</b>(要票)—— <b>鸽子谷观景台</b>、<b>Çavuşin</b>、<b>帕夏贝</b>(要票)—— 回格雷梅(5 点最后一班大巴,早点回)</li>
+        <li>然后前往鸽子谷</li>
+        <li>然后返回格雷梅,等待去精灵烟囱的车</li>
+      </ul>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4M9 10h.01M15 10h.01"/></svg>
+        住宿
+      </div>
+      <div class="txt"><b>夜巴</b><span class="dim"> · 晚上 9 点半格雷梅车站上车</span></div>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6v6M15 6v6M2 12h19.6M18 18h3s-.5-4.3-.8-6M4 18H1s.5-4.3.8-6M5 18l1.5 2h3L11 18M13 18l1.5 2h3L19 18"/></svg>
+        交通需求
+      </div>
+      <div class="txt">乌奇希萨尔交通:</div>
+      <ul>
+        <li>在格雷梅巴士总站(Göreme Otobüs Terminali)乘坐前往内夫谢希尔(Nevşehir)方向的大巴,票价约 <b>40–50 里拉</b>,车程约 10 分钟</li>
+        <li>在 "<b>Hanem Art Center</b>" 站下车,步行约 500 米即可到达城堡</li>
+        <li>注意提前和司机确认下车</li>
+      </ul>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M9 7h6M9 11h6M9 15h3"/></svg>
+        行李处理
+      </div>
+      <div class="txt">车上</div>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18v9H3zM7 11V8a5 5 0 0 1 10 0v3"/></svg>
+        吃什么
+      </div>
+      <ul>
+        <li>当地吃一个早餐</li>
+        <li>带干粮路上吃吧</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Day 3 ================= -->
+<section class="day">
+  <div class="day-head">
+    <div class="day-num">3</div>
+    <div class="day-title">
+      <div class="d">9 月 30 日 · 周三</div>
+      <div class="t">清晨到安塔利亚,老城、海边、日落</div>
+    </div>
+    <div class="city">安塔利亚</div>
+  </div>
+  <div class="day-body">
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        行程
+      </div>
+      <div class="txt">清晨到 Antalya,玩老城、海边、日落</div>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4M9 10h.01M15 10h.01"/></svg>
+        住宿
+      </div>
+      <div class="txt"><b>Gold Coast Hostel</b><span class="dim"> · 安塔利亚</span></div>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6v6M15 6v6M2 12h19.6M18 18h3s-.5-4.3-.8-6M4 18H1s.5-4.3.8-6M5 18l1.5 2h3L11 18M13 18l1.5 2h3L19 18"/></svg>
+        转场 / 交通
+      </div>
+      <ul>
+        <li>follow klook 报团</li>
+        <li>不用操心,直接酒店来回;解决车站到集合地点的交通</li>
+      </ul>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M9 7h6M9 11h6M9 15h3"/></svg>
+        行李处理
+      </div>
+      <div class="txt">需要放车上了 / 早上就放酒店(要看什么时候到集合的地方了)</div>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18v9H3zM7 11V8a5 5 0 0 1 10 0v3"/></svg>
+        吃什么
+      </div>
+      <ul>
+        <li>早餐面包什么的</li>
+        <li>中午包饭</li>
+        <li>晚餐再看吧 —— <b>Karadeniz Fast Food</b> 或者 <b>Cemalin mutfağı</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Day 4 ================= -->
+<section class="day">
+  <div class="day-head">
+    <div class="day-num">4</div>
+    <div class="day-title">
+      <div class="d">10 月 1 日 · 周四</div>
+      <div class="t">上午飞伊斯坦布尔,下午亚洲区游玩</div>
+    </div>
+    <div class="city">伊斯坦布尔</div>
+  </div>
+  <div class="day-body">
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        行程
+      </div>
+      <div class="txt">可看日出,上午飞 Istanbul,落地 <b>SAW 机场</b>,下午在亚洲区游玩,晚上回到</div>
+      <ul>
+        <li>游船推荐行程: <b>Kadıköy(卡德柯伊)→ Eminönü(埃米诺努)/ Karaköy(卡拉柯伊)</b></li>
+      </ul>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4M9 10h.01M15 10h.01"/></svg>
+        住宿
+      </div>
+      <div class="txt"><b>Rodin Hostel</b><span class="dim"> · 伊斯坦布尔</span></div>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6v6M15 6v6M2 12h19.6M18 18h3s-.5-4.3-.8-6M4 18H1s.5-4.3.8-6M5 18l1.5 2h3L11 18M13 18l1.5 2h3L19 18"/></svg>
+        交通需求 · 去安塔利亚机场
+      </div>
+      <div class="txt">早上 8 点左右出发,<b>11 点的飞机</b></div>
+      <div class="steps">
+        <div class="step"><b>上车站点:</b>从哈德良门步行约 300–500 米到达 <b>İsmetpaşa</b> 站(谷歌地图导航该站即可)</div>
+        <div class="step"><b>乘车方向:</b>认准开往 <b>Havalimanı</b>(机场)方向的列车。注意同站台可能有开往 Expo 方向的车,千万别上错,上车前看清车头和站台显示屏的终点站</div>
+        <div class="step"><b>下车站点:</b>坐到底站前的一站(倒数第二站)即 <b>Havalimanı Gi</b> 下车</div>
+        <div class="step"><b>前往航站楼:</b>国内航班(Terminal D)——下车出站后跟着 "Domestic Terminal" 指示牌走,对面就是 Terminal D;国际航班(Terminal 1 / 2)——跟着指示牌走到国际航站楼即可,机场内换乘很方便</div>
+        <div class="step"><b>票价与支付:</b>单程票价约 <b>50 里拉</b>。可以直接刷带芯片的 Visa 或 Mastercard 信用卡,也可以购买当地的 Antalya Kart 公交卡</div>
+        <div class="step"><b>运营时间:</b>最早一班约早上 5:40–5:50 发车,最晚到晚上 12:00 左右,基本能覆盖绝大多数航班</div>
+      </div>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M9 7h6M9 11h6M9 15h3"/></svg>
+        行李处理
+      </div>
+      <div class="txt">从 SAW 机场下来坐 <b>M4 地铁</b>到 <b>Kadıköy 站</b>,出站后在码头附近找寄存点(如导航 Bade 3 Hotel 或 Hotel My Dora 附近的巷子里)。晚上放到住宿的地方</div>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18v9H3zM7 11V8a5 5 0 0 1 10 0v3"/></svg>
+        吃什么
+      </div>
+      <div class="txt dim">—</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Day 5 ================= -->
+<section class="day">
+  <div class="day-head">
+    <div class="day-num">5</div>
+    <div class="day-title">
+      <div class="d">10 月 2 日 · 周五</div>
+      <div class="t">伊斯坦布尔完整游玩 · 历史半岛</div>
+    </div>
+    <div class="city">伊斯坦布尔</div>
+  </div>
+  <div class="day-body">
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        行程
+      </div>
+      <div class="txt">Istanbul 完整游玩</div>
+      <ul>
+        <li><b>圣索菲亚、蓝色清真寺、地下水宫、托普卡帕宫</b>等历史半岛精华</li>
+      </ul>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4M9 10h.01M15 10h.01"/></svg>
+        住宿
+      </div>
+      <div class="txt dim">伊斯坦布尔(住宿地点待定)</div>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6v6M15 6v6M2 12h19.6M18 18h3s-.5-4.3-.8-6M4 18H1s.5-4.3.8-6M5 18l1.5 2h3L11 18M13 18l1.5 2h3L19 18"/></svg>
+        转场 / 交通
+      </div>
+      <div class="txt">历史建筑巡游</div>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M9 7h6M9 11h6M9 15h3"/></svg>
+        行李处理
+      </div>
+      <div class="txt">行李不变</div>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18v9H3zM7 11V8a5 5 0 0 1 10 0v3"/></svg>
+        吃什么
+      </div>
+      <div class="txt dim">—</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Day 6 ================= -->
+<section class="day">
+  <div class="day-head">
+    <div class="day-num">6</div>
+    <div class="day-title">
+      <div class="d">10 月 3 日 · 周六</div>
+      <div class="t">伊斯坦布尔游玩至傍晚,去机场附近住</div>
+    </div>
+    <div class="city">机场附近</div>
+  </div>
+  <div class="day-body">
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        行程
+      </div>
+      <div class="txt">Istanbul 游玩至傍晚,再去机场附近住</div>
+      <ul>
+        <li><b>独立大街、Galata、Karaköy、多尔玛巴赫切宫、Beşiktaş</b></li>
+      </ul>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-4h6v4M9 10h.01M15 10h.01"/></svg>
+        住宿
+      </div>
+      <div class="txt dim">机场附近</div>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6v6M15 6v6M2 12h19.6M18 18h3s-.5-4.3-.8-6M4 18H1s.5-4.3.8-6M5 18l1.5 2h3L11 18M13 18l1.5 2h3L19 18"/></svg>
+        转场 / 交通
+      </div>
+      <div class="txt">机场巴士</div>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M9 7h6M9 11h6M9 15h3"/></svg>
+        行李处理
+      </div>
+      <div class="txt">行李放前台,出发机场酒店</div>
+    </div>
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18v9H3zM7 11V8a5 5 0 0 1 10 0v3"/></svg>
+        吃什么
+      </div>
+      <div class="txt dim">—</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Day 7 ================= -->
+<section class="day">
+  <div class="day-head">
+    <div class="day-num">7</div>
+    <div class="day-title">
+      <div class="d">10 月 4 日 · 周日</div>
+      <div class="t">清晨返程</div>
+    </div>
+    <div class="city">返程</div>
+  </div>
+  <div class="day-body">
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        行程
+      </div>
+      <div class="txt">清晨返程</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Bahrain ================= -->
+<section class="day bahrain">
+  <div class="day-head">
+    <div class="day-num">★</div>
+    <div class="day-title">
+      <div class="d">10 月 4 日 · 同日</div>
+      <div class="t">巴林一日游(返程经停)</div>
+    </div>
+    <div class="city">巴林</div>
+  </div>
+  <div class="day-body">
+    <div class="sec">
+      <div class="sec-label">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        提醒
+      </div>
+      <ul>
+        <li>来回保留 <b>4 个小时</b>,<b>5 个小时</b>旅行</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= note ================= -->
+<div class="note">
+  <b>表格底部备注</b>
+  第一天中午到达 SAW 机场,然后计划去亚洲区玩,傍晚穿越海峡回到欧洲区落脚,住宿在独立大街附近,然后第二天做历史建筑巡游,第三天晚上 19 点左右从独立大街附近的住宿前往 IST 机场,你帮我安排一下合理的行程。
+</div>
+
+</main>
+
+<footer>土耳其行程 · 2026.9.28–10.4</footer>
+
+</div>
+</body>
+</html>
